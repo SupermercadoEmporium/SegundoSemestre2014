@@ -26,7 +26,7 @@ shinyServer(function(input, output) {
   output$text4_jd<-renderPrint({
   x<-input$select
   y<-input$select2
-  paste("Lift",round(round(a_matrix_jd[x,y], digits=4)/(round(a_matrix_jd[x,x], digits=4)*round(a_matrix_jd[y,y], digits=4)),digits=4))
+  paste("Lift",round(round(a_matrix_jd[x,y]/a_matrix_jd[x,x], digits=4)/round(a_matrix_jd[y,y], digits=4),digits=4))
 })
 
   output$tablanamecat1_jd<-renderText({
@@ -209,11 +209,11 @@ shinyServer(function(input, output) {
   paste("Confidence",round(a_matrix_Julio[x,y]/a_matrix_Julio[x,x], digits=4))
 })
 
-  output$liftJulio<-renderPrint({
-  x<-input$select
-  y<-input$select2
-  paste("Lift",round(round(a_matrix_Julio[x,y], digits=4)/(round(a_matrix_Julio[x,x],digist=4)*round(a_matrix_Julio[y,y], digits=4)), digits=4))
-})
+ output$liftJulio<-renderPrint({
+    x<-input$select
+    y<-input$select2
+    paste("Lift",round(round(a_matrix_Julio[x,y]/a_matrix_Julio[x,x], digits=4)/round(a_matrix_Julio[y,y], digits=4), digits=4))
+  })
 
   output$tablanamecat1Julio<-renderText({
   Subconjuntos<-na.omit(subset(catg_sin_rep_Julio,
@@ -396,10 +396,10 @@ shinyServer(function(input, output) {
 })
 
   output$liftAgosto<-renderPrint({
-  x<-input$select
-  y<-input$select2
-  paste("Lift",round(round(a_matrix_Agosto[x,y], digits=4)/(round(a_matrix_Agosto[x,x], digits=4)*round(a_matrix_Agosto[y,y], digits=4)), digits=4))
-})
+    x<-input$select
+    y<-input$select2
+    paste("Lift",round(round(a_matrix_Agosto[x,y]/a_matrix_Agosto[x,x], digits=4)/round(a_matrix_Agosto[y,y], digits=4), digits=4))
+  })
 
   output$tablanamecat1Agosto<-renderText({
   Subconjuntos<-na.omit(subset(catg_sin_rep_Agosto,
@@ -585,8 +585,8 @@ shinyServer(function(input, output) {
   output$liftSeptiembre<-renderPrint({
     x<-input$select
     y<-input$select2
-    paste("Lift", round(round(a_matrix_Septiembre[x,y], digits=4)/(round(a_matrix_Septiembre[x,x], digits=4)*round(a_matrix_Septiembre[y,y], digits=4)), digits=4))
-})
+    paste("Lift", round(round(a_matrix_Septiembre[x,y]/a_matrix_Septiembre[x,x], digits=4)/round(a_matrix_Septiembre[y,y], digits=4), digits=4))
+  })
   
   output$tablanamecat1Septiembre<-renderText({
     x<-input$select
@@ -778,8 +778,8 @@ shinyServer(function(input, output) {
   output$liftOctubre<-renderPrint({
     x<-input$select
     y<-input$select2
-    paste("Lift",round(round(a_matrix_Octubre[x,y], digits=4)/(round(a_matrix_Octubre[x,x], digits=4)*round(a_matrix_Octubre[y,y], digits=4)),digits=4))
-})
+    paste("Lift",round(round(a_matrix_Octubre[x,y]/a_matrix_Octubre[x,x], digits=4)/round(a_matrix_Octubre[y,y], digits=4),digits=4))
+  })
   
   output$tablanamecat1Octubre<-renderText({
     Subconjuntos<-na.omit(subset(catg_sin_rep_Octubre,
@@ -961,8 +961,8 @@ shinyServer(function(input, output) {
   output$liftNoviembre<-renderPrint({
     x<-input$select
     y<-input$select2
-    paste("Lift",round(round(a_matrix_Noviembre[x,y], digits=4)/(round(a_matrix_Noviembre[x,x], digits=4)*round(a_matrix_Noviembre[y,y], digits=4)), digits=4))
-})
+    paste("Lift",round(round(a_matrix_Noviembre[x,y]/a_matrix_Noviembre[x,x], digits=4)/round(a_matrix_Noviembre[y,y], digits=4), digits=4))
+  })
   
   output$tablanamecat1Noviembre<-renderText({
     Subconjuntos<-na.omit(subset(catg_sin_rep_Noviembre,
@@ -1148,8 +1148,8 @@ shinyServer(function(input, output) {
   output$liftDiciembre<-renderPrint({
     x<-input$select
     y<-input$select2
-    paste("Lift",round(round(a_matrix_Diciembre[x,y], digits=4)/(round(a_matrix_Diciembre[x,x], digits=4)*round(a_matrix_Diciembre[y,y], digits=4)), digits=4))
-})
+    paste("Lift",round(round(a_matrix_Diciembre[x,y]/(a_matrix_Diciembre[x,x], digits=4)/round(a_matrix_Diciembre[y,y], digits=4), digits=4))
+  })
   
   output$tablanamecat1Diciembre<-renderText({
     Subconjuntos<-na.omit(subset(catg_sin_rep_Diciembre,
